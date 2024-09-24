@@ -1,0 +1,279 @@
+/* Reset CSS untuk konsistensi di semua browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Menggunakan Google Fonts */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.balance {
+    margin-bottom: 30px;
+}
+
+.balance h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.income-expense {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.income-expense div {
+    background: #f1f1f1;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 45%;
+}
+
+.income-expense h3 {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.income-expense p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.transaction-form {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.transaction-form h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-control input, .form-control select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-control input:focus, .form-control select:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+.transaction-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.transaction-form button:hover {
+    background-color: #218838;
+    transform: scale(1.02);
+}
+
+.transaction-form button:active {
+    transform: scale(0.98);
+}
+
+.transaction-history h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#transaction-list {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    background: #f9f9f9;
+    padding: 10px 15px;
+    border-left: 5px solid #28a745; /* Hijau untuk pemasukan */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+}
+
+.transaction-item.expense {
+    border-left-color: #e74c3c; /* Merah untuk pengeluaran */
+}
+
+.transaction-item:hover {
+    background: #ececec;
+}
+
+.transaction-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.transaction-details span {
+    font-size: 1em;
+    color: #333;
+}
+
+.transaction-amount {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.transaction-amount.income {
+    color: #28a745; /* Hijau */
+}
+
+.transaction-amount.expense {
+    color: #e74c3c; /* Merah */
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Styling untuk tombol Download CSV dan XLSX */
+.download-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.download-btn {
+    flex: 1;
+    padding: 12px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.download-btn:first-child {
+    margin-left: 0;
+}
+
+.download-btn:last-child {
+    margin-right: 0;
+}
+
+.download-btn i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+.download-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.02);
+}
+
+.download-btn:active {
+    transform: scale(0.98);
+}
+
+/* Responsif */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .income-expense {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .income-expense div {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+    }
+
+    .download-btn {
+        margin: 5px 0;
+    }
+}

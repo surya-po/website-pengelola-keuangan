@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker Keuangan Pribadi by surya</title>
+    <link rel="stylesheet" href="styless.css">
+    <!-- Menghubungkan Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papn0GqYKew0SU0NnYk+Iaw+kqV5BjXVEZ5b2m0pDPL7kZElUlMrrCeGci8IigxA2tyOxtIY4JyJa8XN8GHZjw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h1>Tracker Keuangan Pribadi</h1>
+        <div class="balance">
+            <h2>Saldo: <span id="balance">Rp 0</span></h2>
+            <div class="income-expense">
+                <div>
+                    <h3>Pemasukan</h3>
+                    <p id="income">Rp 0</p>
+                </div>
+                <div>
+                    <h3>Pengeluaran</h3>
+                    <p id="expense">Rp 0</p>
+                </div>
+            </div>
+        </div>
+        <div class="transaction-form">
+            <h3>Tambah Transaksi</h3>
+            <form id="form">
+                <div class="form-control">
+                    <label for="description">Deskripsi</label>
+                    <input type="text" id="description" placeholder="Masukkan deskripsi..." required>
+                </div>
+                <div class="form-control">
+                    <label for="amount">Jumlah</label>
+                    <input type="number" id="amount" placeholder="Masukkan jumlah..." required>
+                </div>
+                <div class="form-control">
+                    <label for="type">Tipe</label>
+                    <select id="type">
+                        <option value="income">Pemasukan</option>
+                        <option value="expense">Pengeluaran</option>
+                    </select>
+                </div>
+                <button type="submit">Tambah</button>
+            </form>
+        </div>
+        <div class="transaction-history">
+            <h3>Riwayat Transaksi</h3>
+            <ul id="transaction-list">
+                <!-- Transaksi akan ditambahkan di sini -->
+            </ul>
+            <div class="download-buttons">
+                <button id="download-csv-btn" class="download-btn">
+                    <i class="fas fa-file-csv"></i> Download CSV
+                </button>
+                <button id="download-xlsx-btn" class="download-btn">
+                    <i class="fas fa-file-excel"></i> Download XLSX
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden">Download telah dimulai!</div>
+
+    <!-- SheetJS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
