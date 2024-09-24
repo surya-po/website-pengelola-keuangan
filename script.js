@@ -186,25 +186,6 @@ function downloadTransactionsXLSX() {
     showToast('Download XLSX telah dimulai.');
 }
 
-// Fungsi untuk menampilkan toast
-function showToast(message) {
-    let toast = document.getElementById('toast');
-    if (!toast) {
-        // Membuat elemen toast jika belum ada
-        toast = document.createElement('div');
-        toast.id = 'toast';
-        toast.className = 'hidden';
-        document.body.appendChild(toast);
-    }
-    toast.innerText = message;
-    toast.classList.remove('hidden');
-    toast.classList.add('show');
-
-    setTimeout(() => {
-        toast.classList.remove('show');
-        toast.classList.add('hidden');
-    }, 3000);
-}
 
 // Fungsi untuk menginisialisasi aplikasi
 function init() {
